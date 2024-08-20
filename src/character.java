@@ -5,6 +5,7 @@ public class character {
     int lvl;
     int maxHealth;
     int health;
+    int exp;
 
     public character()
     {
@@ -13,6 +14,7 @@ public class character {
         lvl = 0;
         maxHealth = 0;
         health = 0;
+        exp = 0;
     }
     public character(String name, int money, int lvl, int health)
     {
@@ -21,6 +23,7 @@ public class character {
         this.lvl = lvl;
         this.maxHealth = lvl * 7;
         this.health = maxHealth;
+        exp = 0;
     }
 
     //set + get
@@ -44,6 +47,15 @@ public class character {
     public void takeDamage(int damage)
     {
         health = health - damage; //lol...
+    }
+    public String lvlUp()
+    {
+        if (exp > 10)
+        {
+            lvl++;
+            exp = 0;
+        }
+        return "Congratulations!! this level is now " + lvl;
     }
 
 

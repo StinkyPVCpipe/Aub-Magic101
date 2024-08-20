@@ -4,6 +4,19 @@ public class Bard extends character{
     private int mana; //currently has :3
     private final int MAXMANA;
 
+    public Bard()
+    {
+        name = "";
+        money = 0;
+        lvl = 0;
+        health = 0;
+        exp = 0;
+        instrument = "";
+        mana = 0;
+        MAXMANA = 0;
+    }
+
+
     //2 constructors
     public Bard(String name, int money, int lvl, int health, String instrument, int mana)
     {
@@ -11,6 +24,7 @@ public class Bard extends character{
         this.instrument = instrument;
         this.MAXMANA = mana;
         this.mana = MAXMANA;
+        exp = 0;
     }
 
     //3 setters + getters
@@ -32,21 +46,19 @@ public class Bard extends character{
         if (manaRq <= mana)
         {
             mana = mana - manaRq;
+            exp += manaRq;
+            return manaRq * lvl;
         }
         else
         {
             return 0;
         }
-        return manaRq * lvl;
     }
 
     public void longRest()
     {
         super.longRest();
         mana = MAXMANA;
-        //AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH
-        //uregh....im so COOKED!!!
-
     }
 
 

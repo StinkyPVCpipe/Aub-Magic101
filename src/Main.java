@@ -3,8 +3,9 @@ public class Main {
      //System.out.println("NYAH");
      Bard saltine = new Bard("Saltine Pretzel Bread", 10, 3,10, "flute",100);
      Bard skilledBard = new Bard("Pete Davidson",200, 10, 10,"trombone", 10000000);
+     Barbarian Darryl = new Barbarian("Darryl", 250,12,10, 5, 100, "fists");
 
      //System.out.println(saltine.toString());
-
+        System.out.println(Darryl.toString());
     }
 }
