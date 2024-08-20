@@ -6,6 +6,6 @@ public class Main {
      Barbarian Darryl = new Barbarian("Darryl", 250,12,10, 5, 100, "fists");
 
      //System.out.println(saltine.toString());
-        System.out.println(Darryl.toString());
+        //System.out.println(Darryl.toString());
     }
 }
