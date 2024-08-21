@@ -2,7 +2,7 @@ public class Bard extends character{
     //1 instance variables
     private String instrument;
     private int mana; //currently has :3
-    private final int MAXMANA;
+    private int maxMana;
 
     public Bard()
     {
@@ -13,17 +13,17 @@ public class Bard extends character{
         exp = 0;
         instrument = "";
         mana = 0;
-        MAXMANA = 0;
+        maxMana = 0;
     }
 
 
     //2 constructors
-    public Bard(String name, int money, int lvl, int health, String instrument, int mana)
+    public Bard(String name, int money, int lvl, int health, String instrument)
     {
         super(name, money, lvl, health);
         this.instrument = instrument;
-        this.MAXMANA = mana;
-        this.mana = MAXMANA;
+        this.maxMana = 10 * lvl;
+        mana = maxMana;
         exp = 0;
     }
 
@@ -54,20 +54,23 @@ public class Bard extends character{
             return 0;
         }
     }
-
     public void longRest()
     {
         super.longRest();
-        mana = MAXMANA;
+        mana = maxMana;
+    }
+    public void lvlUp()
+    {
+        super.lvlUp();
+        maxMana = 10 * lvl;
     }
 
 
     //5 toString
     public String toString() {
 
-        String output = super.toString();
-        output = output.concat("\ninstrument: " + instrument +
-                "\nmana: " + mana);
+        String output = "Class: Bard\n" + super.toString() + "\ninstrument: " + instrument +
+                "\nmana: " + mana + "\n";
        return output;
     }
 }

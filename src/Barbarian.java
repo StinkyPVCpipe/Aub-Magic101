@@ -3,7 +3,7 @@ public class Barbarian extends character
     private int rageLvl;
     private String weapon;
     private int stamina;
-    private int staminaMAX;
+    private int staminaMax;
 
     //constructors
     public Barbarian ()
@@ -16,15 +16,15 @@ public class Barbarian extends character
         rageLvl = 0;
         weapon = "";
         stamina = 0;
-        staminaMAX = 0;
+        staminaMax = 0;
     }
-    public Barbarian (String name, int money, int lvl, int health, int rageLvl, int staminaMAX, String weapon)
+    public Barbarian (String name, int money, int lvl, int health, int rageLvl, String weapon)
     {
         super(name, money, lvl, health);
         this.rageLvl = rageLvl;
         this.weapon = weapon;
-        this.staminaMAX = staminaMAX;
-        this.stamina = staminaMAX;
+        this.staminaMax = 10 * lvl;
+        this.stamina = staminaMax;
         exp = 0;
     }
 
@@ -63,15 +63,19 @@ public class Barbarian extends character
     public void longRest()
     {
         super.longRest();
-        stamina = staminaMAX;
+        stamina = staminaMax;
+    }
+    public void lvlUp()
+    {
+        super.lvlUp();
+        staminaMax = 10*lvl;
     }
 
     //toString
     public String toString()
     {
-        String output = super.toString();
-        output = output.concat("\nRage Level: " + rageLvl +
-                "\nWeapon: " + weapon);
+        String output = "Class: Barbarian\n" + super.toString() + "\nRage Level: " + rageLvl +
+                "\nWeapon: " + weapon + "\n";
         return output;
     }
 

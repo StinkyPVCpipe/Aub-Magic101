@@ -38,6 +38,10 @@ public class character {
     public int getMoney() {
         return money;
     }
+    public String getHealth()
+    {
+        return health + " hit points out of " + maxHealth;
+    }
 
     //brain methods blehhh
     public void longRest()
@@ -48,23 +52,22 @@ public class character {
     {
         health = health - damage; //lol...
     }
-    public String lvlUp()
+    public void lvlUp()
     {
         if (exp > 10)
         {
             lvl++;
             exp = 0;
         }
-        return "Congratulations!! this level is now " + lvl;
     }
 
 
     //toString YAYYYY
     public String toString()
     {
-        return "name: " + name  +
-            "\nmoney: " + money + " gold pieces" +
-            "\nlevel: " + lvl +
-            "\ncurrent hit points: " + health;
+        return "Name: " + name  +
+            "\nMoney: " + money + " gold pieces" +
+            "\nLevel: " + lvl +
+            "\nCurrent Hit Points: " + health;
     }
 }
