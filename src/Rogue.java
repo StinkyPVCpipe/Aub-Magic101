@@ -13,9 +13,9 @@ public class Rogue extends character
         sneakLvl = 0;
     }
 
-    public Rogue(String name, int money, int lvl, int health, int sneakLvl)
+    public Rogue(String name, int money, int lvl, int health, String weapon, int sneakLvl)
     {
-        super(name, money, lvl, health);
+        super(name, money, lvl, health, weapon);
         this.sneakLvl = sneakLvl;
         sneak = sneakLvl;
         exp = 0;

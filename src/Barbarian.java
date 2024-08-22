@@ -18,9 +18,9 @@ public class Barbarian extends character
         stamina = 0;
         staminaMax = 0;
     }
-    public Barbarian (String name, int money, int lvl, int health, int rageLvl, String weapon)
+    public Barbarian (String name, int money, int lvl, int health, String weapon, int rageLvl)
     {
-        super(name, money, lvl, health);
+        super(name, money, lvl, health, weapon);
         this.rageLvl = rageLvl;
         this.weapon = weapon;
         this.staminaMax = 10 * lvl;
@@ -36,14 +36,6 @@ public class Barbarian extends character
     public int getStamina()
     {
         return stamina;
-    }
-    public String getWeapon()
-    {
-        return weapon;
-    }
-    public void setWeapon(String weapon)
-    {
-        this.weapon = weapon;
     }
 
     //brain methods
@@ -74,8 +66,7 @@ public class Barbarian extends character
     //toString
     public String toString()
     {
-        String output = "Class: Barbarian\n" + super.toString() + "\nRage Level: " + rageLvl +
-                "\nWeapon: " + weapon + "\n";
+        String output = "Class: Barbarian\n" + super.toString() + "\nRage Level: " + rageLvl;
         return output;
     }
 

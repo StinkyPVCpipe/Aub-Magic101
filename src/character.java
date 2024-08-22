@@ -6,6 +6,7 @@ public class character {
     int maxHealth;
     int health;
     int exp;
+    Weapon weapon;
 
     public character()
     {
@@ -15,8 +16,9 @@ public class character {
         maxHealth = 0;
         health = 0;
         exp = 0;
+        weapon = new Weapon("", 0);
     }
-    public character(String name, int money, int lvl, int health)
+    public character(String name, int money, int lvl, int health, String weapon)
     {
         this.name = name;
         this.money = money;
@@ -24,6 +26,7 @@ public class character {
         this.maxHealth = lvl * 7;
         this.health = maxHealth;
         exp = 0;
+        this.weapon = new Weapon(weapon, lvl);
     }
 
     //set + get
@@ -31,7 +34,10 @@ public class character {
     public void setName(String name) {
         this.name = name;
     }
-
+    public void setWeapon(String weapon)
+    {
+        this.weapon = new Weapon(weapon, lvl);
+    }
     public String getName() {
         return name;
     }
@@ -41,6 +47,9 @@ public class character {
     public String getHealth()
     {
         return health + " hit points out of " + maxHealth;
+    }
+    public String getWeapon() {
+        return weapon.toString();
     }
 
     //brain methods blehhh

@@ -18,9 +18,9 @@ public class Bard extends character{
 
 
     //2 constructors
-    public Bard(String name, int money, int lvl, int health, String instrument)
+    public Bard(String name, int money, int lvl, int health, String weapon, String instrument)
     {
-        super(name, money, lvl, health);
+        super(name, money, lvl, health, weapon);
         this.instrument = instrument;
         this.maxMana = 10 * lvl;
         mana = maxMana;
