@@ -77,6 +77,8 @@ public class character {
         return "Name: " + name  +
             "\nMoney: " + money + " gold pieces" +
             "\nLevel: " + lvl +
-            "\nCurrent Hit Points: " + health;
+            "\nCurrent Hit Points: " + health +
+            "\n" + weapon.toString();
+
     }
 }
