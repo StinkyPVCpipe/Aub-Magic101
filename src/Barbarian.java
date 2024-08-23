@@ -66,7 +66,7 @@ public class Barbarian extends character
     //toString
     public String toString()
     {
-        String output = "Class: Barbarian\n" + super.toString() + "\nRage Level: " + rageLvl;
+        String output = "Class: Barbarian\n" + super.toString() + "\nRage Level: " + rageLvl + "\n";
         return output;
     }
 

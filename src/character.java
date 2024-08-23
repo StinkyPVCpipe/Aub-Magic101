@@ -46,10 +46,14 @@ public class character {
     }
     public String getHealth()
     {
-        return health + " hit points out of " + maxHealth;
+        if(health <= 0-maxHealth)
+        {
+            return "dead";
+        }
+        return " at " + health + " hit points out of " + maxHealth;
     }
     public String getWeapon() {
-        return weapon.toString();
+        return weapon.getType();
     }
 
     //brain methods blehhh
@@ -59,7 +63,7 @@ public class character {
     }
     public void takeDamage(int damage)
     {
-        health = health - damage; //lol...
+        health = health - damage; //lol.
     }
     public void lvlUp()
     {
@@ -68,6 +72,12 @@ public class character {
             lvl++;
             exp = 0;
         }
+    }
+    public int getAttackDmg()
+    {
+        int attackDmg = weapon.attack();
+        exp+=attackDmg;
+        return attackDmg;
     }
 
 
