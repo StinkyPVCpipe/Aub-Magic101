@@ -6,8 +6,8 @@ public class Main {
      Bard saltine = new Bard("Saltine Pretzel Bread", 10, 3,10, "dagger", "flute");
      Bard skilledBard = new Bard("Pete Davidson",200, 10, 10, "pointy stick","trombone");
      Barbarian Darryl = new Barbarian("Darryl", 250,12,10, "fists", 5);
-     Barbarian Spencer = new Barbarian("Spencer F. Michael", 10, 4, 10, "super cool and epic sword", 3);
-     Rogue Stephen = new Rogue("Stephen Phillips", 500, 18,10, "long cloak", 8);
+     Barbarian Spencer = new Barbarian("Spencer F. Michael", 10, 11, 10, "super cool and epic sword", 3);
+     Rogue Stephen = new Rogue("Stephen Phillips", 500, 15,10, "long cloak", 8);
      Rogue Ron = new Rogue("Ron", 10, 8, 10, "mustache", 3);
      int attackDmg = 0;
      /*
@@ -48,11 +48,13 @@ public class Main {
                 Stephen.getName() + " sneaks up and attacks " + Spencer.getName() + " with their " + Stephen.getWeapon());
         attackDmg = Stephen.sneakAttack();
         Spencer.takeDamage(attackDmg);
-        System.out.println(Spencer.getName() + " takes " + attackDmg + "hit points!" +
+        System.out.println(Spencer.getName() + " takes " + attackDmg + " hit points!" +
                 "\nThis leaves " + Spencer.getName() + Spencer.getHealth());
         System.out.println(Spencer.getName() + " invokes rage and attacks " + Stephen.getName());
         attackDmg = Spencer.Attack(10);
         Stephen.dodge(attackDmg);
-        System.out.println(Stephen.getName() + " attempts to dodge and takes " + attackDmg + " hit points");
+        System.out.println(Stephen.getName() + " attempts to dodge and takes " + attackDmg + " hit points" +
+                "\nThis leaves Stephen at " + Stephen.getHealth());
     }
 }
+

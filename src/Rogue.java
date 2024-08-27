@@ -47,7 +47,7 @@ public class Rogue extends character
 
     public int sneakAttack()
     {
-        int attackDmg = lvl*sneak;
+        int attackDmg = (lvl/2)*sneak;
         sneak--;
         return attackDmg;
     }
